@@ -1,0 +1,19 @@
+---
+title: "January 4th, 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r map}
+library(leaflet)
+
+HawaiiLoc = data.frame(lat=c(21.97, 21.33, 20.76, 19.69), lng=c(-159.35, -157.85, -156.45, -155.08))
+HIpopup = c("Kauai Island", "Oahu Island", "Maui Island", "Hawaii Island")
+
+HawaiiLoc %>% leaflet() %>% addTiles() %>% addMarkers(popup=HIpopup)
+
+```
